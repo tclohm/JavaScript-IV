@@ -61,7 +61,7 @@ class Humanoid extends CharacterStats {
 	greet() { return `${this.name} offers a greeting in ${this.language}.`; }
 	damage(opponent) { 
 		opponent.healthPoints -= this.weaponDamage;
-		return `${this.name} damages ${opponent.name} for ${this.weaponDamage}. ${opponent.name}'s health is at ${opponent.healthPoints}`; }
+		return `   ⚔️  ${this.name} damages ${opponent.name} for ${this.weaponDamage}. ${opponent.name}'s health is at ${opponent.healthPoints}`; }
 }
  
 /*
@@ -81,7 +81,7 @@ const mage = new Humanoid({
     height: 1,
   },
   healthPoints: 5,
-  name: 'Bruce',
+  name: '🧙‍♂️ Bruce',
   team: 'Mage Guild',
   weapons: [
     'Staff of Shamalama',
@@ -97,7 +97,7 @@ const swordsman = new Humanoid({
     height: 2,
   },
   healthPoints: 15,
-  name: 'Sir Mustachio',
+  name: '👨‍🦰 Sir Mustachio',
   team: 'The Round Table',
   weapons: [
     'Giant Sword',
@@ -114,7 +114,7 @@ const archer = new Humanoid({
     height: 4,
   },
   healthPoints: 10,
-  name: 'Lilith',
+  name: '🧝‍♀️ Lilith',
   team: 'Forest Kingdom',
   weapons: [
     'Bow',
@@ -176,7 +176,7 @@ const tina = new Hero({
     height: 3,
   },
   healthPoints: 15,
-  name: 'Tina',
+  name: '👩‍🎤 Tina',
   team: 'Kiss-my-anthia',
   weapons: [
     'fists',
@@ -194,7 +194,7 @@ const king = new Villian({
     height: 7,
   },
   healthPoints: 15,
-  name: 'King',
+  name: '🧟‍♂️ King',
   team: 'Lunesta',
   weapons: [
     'Theodore\'s Axe',

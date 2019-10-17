@@ -52,7 +52,7 @@ const mary = new Person({name: "Mary Jane", age: 30, location: "Brooklyn"});
 const jimmy = new Person({name: "James", age: 31, location: "Manhattan"});
 
 console.log();
-console.log("==== testing person class ====");
+console.log("==== 👩‍💻testing person class👨‍💻 ====");
 console.log(peter.speak());
 console.log(mary.speak());
 console.log(jimmy.speak());
@@ -67,7 +67,7 @@ const phil = new Instructor({name: "Phil", age: "38", location: "Sacramento", sp
 const maria = new Instructor({name: "Maria", age: "19", location: "Boston", specialty: "iOS", favLanguage: "Objective-C", catchPhrase: "Design for long term"});
 
 console.log();
-console.log("==== testing instructor class ====");
+console.log("==== 👩‍🏫testing instructor class👨‍🏫 ====");
 console.log(lily.speak());
 console.log(lily.demo(lily.specialty));
 console.log(phil.speak());
@@ -83,7 +83,7 @@ const tyler = new Student({name: "Tyler", age: "50", location: "Seattle", previo
 const gotham = new Student({name: "Gotham", age: "18", location: "Salt Lake City", previousBackground: "Auditor", className: "iOS 31", favSubjects: ["Animation", "Interface Design", "Networking", "Core Data"]});
 
 console.log();
-console.log("==== testing student class ====");
+console.log("==== 👨‍🎓testing student class👩‍🎓 ====");
 console.log(rhett.speak() + " And I'm in " + rhett.className + "!");
 console.log("Tylers's favorite subjects are:")
 tyler.listsSubjects();
@@ -101,7 +101,7 @@ const nathan = new ProjectManager({name: "Nathan", age: "37", location: "Perth",
 
 
 console.log();
-console.log("==== testing project manager class ====");
+console.log("==== 👷‍♀️testing project manager class👷‍♂️ ====");
 
 console.log(marta.speak());
 console.log(marta.standUp(marta.gradClassName));
@@ -112,3 +112,4 @@ console.log(nathan.speak());
 if (nathan.sprintChallenge != 'function') {
 	console.log(`${nathan.name} doesn't have permission to do a sprint challenge, he isn't a student. ${nathan.name} is a project manager for ${nathan.gradClassName}, which is weird because his favorite language is ${nathan.favLanguage}.`);
 }
+console.log("fin!🍻🍻🍻")
