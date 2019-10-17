@@ -19,6 +19,18 @@ class Instructor extends Person {
 
 	demo(subject) { return `Today we are learning about ${subject}.`; }
 	grade(student, subject) { return `${student.name} receives a perfect score on ${subject}.`; }
+	grading(student) {
+		while(student.grade <= 70) {
+			console.log(`${student.name} grade: ${student.grade}`);
+			console.log(`${this.name} is grading ${student.name} assignments...`);
+			let points = Math.floor((Math.random() * 10) + -4);
+			console.log(`points: ${points}`);
+			student.grade += points;
+			console.log(`${student.name}'s grade: ${student.grade}`);
+		}
+		console.log(`Congrats ${student.name}, you've graduated with a grade of ${student.grade}!`);
+		return;
+	}
 }
 
 class Student extends Person {
@@ -27,11 +39,14 @@ class Student extends Person {
 		this.previousBackground = props.previousBackground;
 		this.className = props.className;
 		this.favSubjects = props.favSubjects;
+		this.grade = props.grade
 	}
 
 	listsSubjects() { return this.favSubjects.forEach( function(subject) { console.log(subject); }); }
 	PRAssignment(subject) { return `${this.name} has submitted a PR for ${subject}.`; }
 	sprintChallenge(subject) { return `${this.name} has begun spring challenge on ${subject}.`; }
+
+
 }
 
 
@@ -78,9 +93,9 @@ console.log(maria.grade(peter, phil.specialty));
 console.log(lily.grade({name:"Senor Don Gato"}, lily.catchPhrase));
 
 // MARK: -- Student Testing
-const rhett = new Student({name: "Rhett", age: "36", location: "Berlin", previousBackground: "Event Coordinator", className: "Web Dev 400", favSubjects: ["CSS", "HTML", "Redux"]});
-const tyler = new Student({name: "Tyler", age: "50", location: "Seattle", previousBackground: "Project Manager", className: "Data Science 21", favSubjects: ["linear algebra", "logic", "data visualization"]});
-const gotham = new Student({name: "Gotham", age: "18", location: "Salt Lake City", previousBackground: "Auditor", className: "iOS 31", favSubjects: ["Animation", "Interface Design", "Networking", "Core Data"]});
+const rhett = new Student({name: "Rhett", age: "36", location: "Berlin", previousBackground: "Event Coordinator", className: "Web Dev 400", favSubjects: ["CSS", "HTML", "Redux"], grade: Math.floor((Math.random() * 100) + 1)});
+const tyler = new Student({name: "Tyler", age: "50", location: "Seattle", previousBackground: "Project Manager", className: "Data Science 21", favSubjects: ["linear algebra", "logic", "data visualization"], grade: Math.floor((Math.random() * 100) + 1)});
+const gotham = new Student({name: "Gotham", age: "18", location: "Salt Lake City", previousBackground: "Auditor", className: "iOS 31", favSubjects: ["Animation", "Interface Design", "Networking", "Core Data"], grade: Math.floor((Math.random() * 100) + 1)});
 
 console.log();
 console.log("==== 👨‍🎓testing student class👩‍🎓 ====");
@@ -112,4 +127,8 @@ console.log(nathan.speak());
 if (nathan.sprintChallenge != 'function') {
 	console.log(`${nathan.name} doesn't have permission to do a sprint challenge, he isn't a student. ${nathan.name} is a project manager for ${nathan.gradClassName}, which is weird because his favorite language is ${nathan.favLanguage}.`);
 }
-console.log("fin!🍻🍻🍻")
+console.log("fin!🍻🍻🍻");
+console.log();
+console.log("==== STRETCH ====");
+
+phil.grading(rhett);
